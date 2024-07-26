@@ -144,4 +144,6 @@ router.get('/getUser', auth.autherizeMiddleware, async (req, res) => {
     }
 });
 
+
+
 export default router;
