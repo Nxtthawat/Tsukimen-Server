@@ -1,10 +1,10 @@
 const config = {
     secureKey: 'tsukimen@lampang',
     tsukimenDB: {
-        host: 'bymallljw7sqdngpgui9-mysql.services.clever-cloud.com',
-        user: 'uk91duwmgmcd3xpa',
-        password: 'HOxFRCBqfh5yHrMTUfdB',
-        database: 'bymallljw7sqdngpgui9'
+        host: 'gateway01.ap-southeast-1.prod.aws.tidbcloud.com',
+        user: '4Hhk89doDKEsuSc.root',
+        password: 'DMKaOBKTPaiG5gWN',
+        database: 'tsukimen'
     }
 };
 
