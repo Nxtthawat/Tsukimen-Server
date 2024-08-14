@@ -69,7 +69,7 @@ io.on("connection", (socket) => {
 
     assignUserToGroup(socket); // Assign user to a group upon connection
 
-    connectedUsers.push({id: socket.id ,username: socket.username, characters: 'src/assets/MCMale.png', roomId: socket.groupId});
+    connectedUsers.push({id: socket.id ,username: socket.username, characters: '../../public/assets/MCMale.png', roomId: socket.groupId});
 
     // Broadcast user connected message only within the same group
     groups[socket.groupId].members.forEach(member => {
