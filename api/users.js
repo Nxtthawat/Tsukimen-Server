@@ -62,7 +62,8 @@ router.post('/register', async (req, res) => {
             var sql = "SELECT * FROM users WHERE username = ? OR email = ?";
             db.query(sql, [username, email], (err, rows) => {
                 if(err){
-                    res.status(400).send("Internal server error");
+                    res.status(400).send(err);
+                    res.send(err);
                 }else{
                     if(rows.length > 0){
                         result = {
@@ -74,12 +75,13 @@ router.post('/register', async (req, res) => {
                         var sql = "INSERT INTO users (username, password, email) VALUES (?, ?, ?)";
                         db.query(sql, [username, md5(password), email], (err, rows) => {
                             if(err){
-                                res.status(500).send("Internal server error");
+                                res.status(500).send(err);
                             }else{
                                 var sql = "SELECT * FROM users WHERE username = ? AND password = ?";
                                 db.query(sql, [username, md5(password)], (err, rows) => {
                                     if(err){
                                         res.status(500).send("Internal server error");
+                                        res.send(err);
                                     }else{
                                         const token = auth.getToken({
                                             username: rows[0].username,
